@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}?v=1.0">
+</head>
+
+<body 
+{% if exception_occured %}
+    style="background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center;"
+{% else %}
+    style="background-image: url('{{ image_url }}'); background-size: cover; background-position: center;"
+{% endif %}
+>
+
+
+
+<div class="center-box">
+
+    <h1>Weather App</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="city" placeholder="Enter city">
+      <button type="submit" class="btn">Search</button>
+    </form>
+
+    <div class="weather">
+      <div class="left">
+        <h2>{{ temp }}°C</h2>
+        <h3>{{ city }}</h3>
+      </div>
+
+      <div class="right">
+        <div class="icon">
+          <img src="https://openweathermap.org/img/wn/{{ icon }}@2x.png" width="100px">
+        </div>
+
+        <div class="condition">
+          <p>{{ description }}</p>
+          <p>{{ day }}</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+{% if Exception_occurres %}
+<script>
+  window.onload = function(){
+    alert("city information is not available to our API");
+  }
+</script>
+{% endif %}
+ 
+
+
+</body>
+</html>

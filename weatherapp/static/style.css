@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;          /* Scrollbar remove */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main center container */
+.center-box {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    padding: 2rem;
+    border-radius: 15px;
+    color: rgb(5,41,51);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    display: grid;
+    grid-template-columns: 70% 28%;
+    gap: 2%;
+}
+
+input {
+    padding: .7rem;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: transparent;
+    color: black;
+    outline: none;
+}
+
+button {
+    padding: .7rem;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+/* Weather box */
+.weather {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.left, .right {
+    width: 48%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.icon img {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
